@@ -1,0 +1,19 @@
+{
+  "name": "whatsapi",
+  "version": "1.0.0",
+  "description": "whatsapp api and whatsapp-client",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whatsapp"
+  ],
+  "author": "cartory",
+  "license": "ISC",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.18.4"
+  }
+}
