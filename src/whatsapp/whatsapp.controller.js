@@ -30,7 +30,8 @@ module.exports = {
     },
     sendMessage: async (req, res) => {
         try {
-            const chat = await whatsapp.getChatById(id._serialized)
+            const { chadId } = req.query
+            const chat = await whatsapp.getChatById(chadId)
             const media = new MessageMedia('*/*', base64String, 'lite.db')
 
             const send = await Promise.all([
