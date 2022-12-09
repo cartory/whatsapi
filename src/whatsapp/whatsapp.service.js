@@ -7,4 +7,7 @@ const client = new Client({
 
 module.exports = client
     .on('qr', qr => qrcode.generate(qr, { small: true }))
-    .on('ready', () => console.log('Client is ready!'))
+    .on('ready', () => {
+        console.log(new Date())
+        console.log('Client is ready!');
+    })

@@ -1,17 +1,11 @@
-const qrcode = require('qrcode-terminal')
-const { Client, LocalAuth } = require('whatsapp-web.js')
+const morgan = require('morgan')
 
-const client = new Client({
-    authStrategy: new LocalAuth()
-})
+const app = require('./src/app')
+const port = process.env.PORT || 3000
 
-
-client.on('qr', (qr) => {
-    qrcode.generate(qr, { small: true })
-})
-
-client.on('ready', () => {
-    console.log('Client is ready!')
-})
-
-client.initialize()
+app
+    .use(morgan('dev'))
+    .listen(port, () => {
+        console.log(new Date())
+        console.log(`Server runnning on http://localhost:${port}/`);
+    })
